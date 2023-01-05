@@ -16,8 +16,8 @@ class VideoController extends Controller
         return [
             'title' => $hero['name'],
             'synopsis' => $hero['synopsis'],
-            'background' => $hero->imageByType(ImageType::BACKGROUND),
-            'logo' => $hero->imageByType(ImageType::LOGO),
+            'background' => $hero->imageByType(ImageType::BACKGROUND)?->url,
+            'logo' => $hero->imageByType(ImageType::LOGO)?->url,
         ];
     }
 

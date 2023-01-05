@@ -21,6 +21,6 @@ class Video extends Model
             return null;
         }
 
-        return $this->images->filter(fn ($img) => $img->type == $type)->first();
+        return $this->images->where('type', $type)->first();
     }
 }
