@@ -21,3 +21,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('videos/hero', [VideoController::class, 'hero']);
 Route::get('videos/all', [VideoController::class, 'all']);
+Route::get('videos/search/{search}', [VideoController::class, 'search']);
