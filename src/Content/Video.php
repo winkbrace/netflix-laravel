@@ -7,13 +7,20 @@ use Illuminate\Database\Eloquent\Model;
 
 class Video extends Model
 {
-    use HasFactory;
-
     protected $table = 'public.videos';
     protected $guarded = [];
 
     public function images()
     {
         return $this->hasMany(Image::class);
+    }
+
+    public function imageByType(ImageType $type): ?Image
+    {
+        if (empty($this->images)) {
+            return null;
+        }
+
+        return $this->images->filter(fn ($img) => $img->type == $type)->first();
     }
 }

@@ -7,8 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Image extends Model
 {
-    use HasFactory;
-
     protected $table = 'public.images';
     protected $guarded = [];
 }
