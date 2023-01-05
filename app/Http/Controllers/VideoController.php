@@ -30,7 +30,7 @@ class VideoController extends Controller
             ->orWhere('synopsis', 'ilike', "%$search%")
             ->orWhere('genres', 'ilike', "%$search%")
             ->orWhere('tags', 'ilike', "%$search%")
-            ->take(10)
+            ->take(20)
             ->get()
             ->toArray(); // without casting to array first, the 'images' would not get overwritten.
 
